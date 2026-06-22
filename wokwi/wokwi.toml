@@ -1,4 +1,4 @@
 [wokwi]
 version = 1
-firmware = "../src/multitask-demo/build/multitask-demo.elf"
-elf = "../src/multitask-demo/build/multitask-demo.elf"
+firmware = "../src/remedial/build/remedial.elf"
+elf = "../src/remedial/build/remedial.elf"

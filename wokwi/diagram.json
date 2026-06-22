@@ -13,7 +13,7 @@
     {
       "type": "wokwi-led",
       "id": "ledFast",
-      "top": -80,
+      "top": -100,
       "left": 220,
       "attrs": {
         "color": "green"
@@ -21,8 +21,17 @@
     },
     {
       "type": "wokwi-led",
+      "id": "ledMedium",
+      "top": -20,
+      "left": 220,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-led",
       "id": "ledSlow",
-      "top": 20,
+      "top": 60,
       "left": 220,
       "attrs": {
         "color": "blue"
@@ -43,11 +52,15 @@
     [ "esp:2", "ledFast:A", "green", [ "v0" ] ],
     [ "ledFast:C", "esp:GND.1", "black", [ "v0" ] ],
 
+    [ "esp:5", "ledMedium:A", "red", [ "v0" ] ],
+    [ "ledMedium:C", "esp:GND.1", "black", [ "v0" ] ],
+
     [ "esp:4", "ledSlow:A", "blue", [ "v0" ] ],
     [ "ledSlow:C", "esp:GND.1", "black", [ "v0" ] ],
 
     [ "esp:2", "logic1:D0", "green", [ "v0" ] ],
-    [ "esp:4", "logic1:D1", "blue", [ "v0" ] ]
+    [ "esp:5", "logic1:D1", "red", [ "v0" ] ],
+    [ "esp:4", "logic1:D2", "blue", [ "v0" ] ]
   ],
   "dependencies": {}
 }

@@ -59,16 +59,20 @@ static void TaskMedium(void *pvParameters)
 
     while (1)
     {
-        gpio_set_level(LED_TASK_MEDIUM, 1);
+        gpio_set_level(LED_TASK_MEDIUM,
+                       !gpio_get_level(LED_TASK_MEDIUM));
 
         printf("[TaskMedium] Running on core %d\n",
                xPortGetCoreID());
 
-        vTaskDelay(pdMS_TO_TICKS(300));
-
-        gpio_set_level(LED_TASK_MEDIUM, 0);
-
-        vTaskDelay(pdMS_TO_TICKS(300));
+        /*
+         * TODO:
+         * Analyze why TaskSlow never executes.
+         *
+         * Students must determine an appropriate
+         * method to allow lower-priority tasks
+         * to receive CPU time.
+         */
     }
 }
 
@@ -125,7 +129,7 @@ void app_main(void)
         "TaskFast",
         2048,
         NULL,
-        3,
+        2,
         NULL);
 
     /* Create medium task */
@@ -134,7 +138,7 @@ void app_main(void)
         "TaskMedium",
         2048,
         NULL,
-        2,
+        3,
         NULL);
 
     /* Create slow task */
